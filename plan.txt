@@ -11,31 +11,41 @@
 [+] Git setup and first commit
 [+] Install Laravel Mix
 	- setup js and scss
-[.] Create Home page using Html and css
-	- include tailwind css
+[+] Install Tailwind CSS
+[+] Create Home page using Html and css
 [.] Create Cart Page
 	- order summary section
     - empty cart section
-[.] Create Order controller and link it in server.js
-[.] Create Orders view with table for customer and admin
-[.] Create Orders single page with status
-[.] Create login page with route
-[.] Create register page with route
-[.] Build register crud
-    - dependencies express-flash express-session cookie-parser dotenv
-	- status code article https:///www.restapitutorial.com/httpsstatuscode.html
-	- database connection. dependencies mongoose
-[.] Build login using passport
-	- install dependencies passport passport-local express-session
-[.] Create menu model and put dummy data
-[.] Fetch all pizzas from DB and show on home page
-[.] Add to Cart functionality
+[+] Move routes to route files
+[+] Create dedicated Controllers
+[+] Add to Cart functionality
+	- Create Menu Model and put dummy Data
+	- Fetch all pizzas from DB and show on Home page
 	- use connect-mongo for session store
+		- dependencies
+			- moongoose, express-session, connect-mongo, dotenv
 	- axios to send ajax request
-	- install notification library npm i noty     https://ned.im/noty/#/
-[.] Make order on carts page
-[.] Place order functionality
-[.] Order tracer
+		- dependencies axios, express-flash
+	- install notification library npm i sweetalert2     https://www.npmjs.com/package/sweetalert2
+[+] Create login page with route
+[+] Create register page with route
+[+] Build register crud
+    - dependencies express-flash express-session cookie-parser dotenv bcrypt
+	- status code article https:///www.restapitutorial.com/httpsstatuscode.html
+[+] Build login using passport
+	- install dependencies passport passport-local express-session
+[+] Create Order controller and link it in server.js
+[+] Create Orders view with table for customer and admin
+[+] Place order functionality
+[+] Show all my orders on customer orders page
 	- dependencies moment
-[.] Socket connection
-	- dependencies socket.io
+[+] Show all orders on admin orders page
+[+] Change order status
+[+] Create Orders single page with status
+	- https://icons8.com/line-awesome
+[+] Fetch all pizzas from DB and show on home page
+[+] Order tracer
+	Socket connection
+		- dependencies socket.io
+[.] Build project for deployment
+[.] Deploy project on live server
