@@ -20,7 +20,7 @@ const httpServer = createServer(app)
 
 //Database Connection
 
-mongoose.connect('mongodb://localhost:27017/pizza',{useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect(process.env.MONGO_CONNECTION_URL,{useNewUrlParser: true, useUnifiedTopology: true});
 
 // Handle connection events
 const connection = mongoose.connection;
@@ -83,6 +83,10 @@ app.set('views', path.join(__dirname,'/resources/views'))
 app.set('view engine', 'ejs')
 
 require('./routes/web')(app)
+app.use((req, res) => {
+    //res.status(404).send('<h1>404, Page not found!!</h1>')
+    res.status(404).render('errors/404')
+})
 
 httpServer.listen(PORT, () => {
                     console.log(`Listeneing on port ${PORT}`)
@@ -94,11 +98,11 @@ const io = require('socket.io')(httpServer)
 io.on('connection', (socket) => {
     //Join
 
-    console.log(socket.id)
+    //console.log(socket.id)
 
     socket.on('join', (orderId) =>
     {
-        console.log(orderId)
+        //console.log(orderId)
         socket.join(orderId)
     })
 

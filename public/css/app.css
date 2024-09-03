@@ -1319,3 +1319,6 @@ section.status {
     font-size: 34px;
   }
 }
+section.errors {
+  min-height: calc(100vh - 141px);
+}
