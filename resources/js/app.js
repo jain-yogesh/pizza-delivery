@@ -2,6 +2,7 @@ import axios from 'axios'
 import Swal from 'sweetalert2'
 import {initAdmin} from './admin'
 import moment from 'moment'
+import { initStripe } from './stripe'
 
 let addToCart = document.querySelectorAll('.add-to-cart')
 let cartCounter = document.querySelector('#cartCounter')
@@ -86,7 +87,10 @@ function updateStatus(order)
 
 }
 
+
 updateStatus(order);
+
+initStripe();
 
 
 //Socket

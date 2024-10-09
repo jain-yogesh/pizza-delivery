@@ -49,3 +49,8 @@
 		- dependencies socket.io
 [.] Build project for deployment
 [.] Deploy project on live server
+
+
+Payment Gateway
+[.] Add stripe
+	-dependencies yarn add @stripe/stripe-js

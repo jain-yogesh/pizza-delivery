@@ -4,6 +4,7 @@ const moment = require('moment')
 function orderController() {
     return {
         store(req, res){
+
             //validate request
 
             const { phone, address } = req.body
@@ -23,7 +24,7 @@ function orderController() {
             order.save().then(result => {
                 Order.populate(result, { path: 'customerId'}).then(placedOrder => {
 
-                    req.flash('success', 'Order placed sucessfully..')
+                    // req.flash('success', 'Order placed sucessfully..')
                     //clear cart
                     delete req.session.cart
                     
@@ -31,7 +32,11 @@ function orderController() {
                     const eventEmitter = req.app.get('eventEmitter')
                     eventEmitter.emit('orderPlaced', placedOrder)
                     
-                    res.redirect('/customer/orders')
+                    
+                    // res.redirect('/customer/orders')
+
+                    //as we are using axios
+                    return res.json({message: 'Order placed sucessfully..'})
                 }).catch(err => {
                     
                 })

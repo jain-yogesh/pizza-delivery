@@ -266,3 +266,10 @@ section.status{
 section.errors{
     min-height: calc(100vh - (87px + 54px));
 }
+
+
+#orders-form svg{
+    position: relative;
+    left: -30px
+
+}
